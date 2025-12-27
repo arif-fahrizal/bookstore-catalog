@@ -2,6 +2,7 @@
 
 import CardProduct from '@/src/components/Cards/CardProduct';
 import CardSkeletonLoader from '@/src/components/Cards/CardSkeletonLoader';
+import EmptyProducts from '@/src/components/EmptyProducts';
 import FilterPagination from '@/src/components/Filter/FilterPagination';
 import Search from '@/src/components/Filter/FilterSearch';
 import FilterSort from '@/src/components/Filter/FilterSort';
@@ -27,6 +28,11 @@ export default function CatalogPage() {
         id="catalog"
         className="grid grid-cols-1 gap-5 max-w-7xl w-full my-20 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
+        {books?.products.length === 0 && !isLoading && (
+          <div className="col-span-4">
+            <EmptyProducts />
+          </div>
+        )}
         {isLoading
           ? [1, 2, 3, 4, 5, 6, 7, 8].map(index => <CardSkeletonLoader key={index} />)
           : books?.products.map((book: ProductType) => (
