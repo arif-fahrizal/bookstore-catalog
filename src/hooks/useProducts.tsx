@@ -1,7 +1,7 @@
 import axios from 'axios';
 import useSWR from 'swr';
 
-export default function useProducts(search = '', sort = 'asc', limit = 8, page = 10) {
+export default function useProducts(search = '', sort = 'asc', limit = 8, page = 0) {
   const { data, isLoading, error } = useSWR(
     `https://dummyjson.com/products/search?q=${search}&sortBy=id&order=${sort}&limit=${limit}&skip=${page}`,
     url => {

@@ -13,7 +13,7 @@ export default function CatalogPage() {
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('asc');
   const [limit, setLimit] = useState(12);
-  const [page, setPage] = useState(10);
+  const [page, setPage] = useState(0);
   const { books, isLoading } = useProducts(search, sort, limit, page);
 
   return (
