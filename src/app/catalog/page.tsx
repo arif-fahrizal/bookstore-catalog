@@ -19,7 +19,7 @@ export default function CatalogPage() {
   return (
     <div className="max-w-360 min-h-screen h-full mx-auto p-3.5 md:p-5 lg:p-10">
       <Search onChange={setSearch} />
-      <div className="flex justify-center items-center gap-10 mt-5">
+      <div className="flex flex-wrap justify-center items-center gap-5 mt-5 md:gap-10">
         <FilterSort onChange={setSort} />
         <FilterPagination onChangeLimit={setLimit} onChangePage={setPage} />
       </div>

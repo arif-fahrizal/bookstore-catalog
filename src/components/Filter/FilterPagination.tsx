@@ -18,7 +18,7 @@ export default function FilterPagination({ onChangeLimit, onChangePage }: Filter
     onChangePage?.(Number((currentPage + 1) * 10));
   };
   return (
-    <div className="flex gap-10">
+    <div className="flex gap-5 md:gap-10">
       <div>
         <select
           id="limitItems"
@@ -46,7 +46,7 @@ export default function FilterPagination({ onChangeLimit, onChangePage }: Filter
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
           </button>
-          <span id="pageInfo" className="text-sm font-medium text-gray-700 min-w-20 text-center">
+          <span id="pageInfo" className="text-sm font-medium text-gray-700 min-w-14 text-center md:min-w-20">
             Page {currentPage}
           </span>
           <button
